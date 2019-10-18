@@ -35,8 +35,8 @@ class Feature extends Component {
                 </legend>
                 {options}
             </fieldset>
-        )
-    }
+        );
+    };
 }
 
 export default Feature;
