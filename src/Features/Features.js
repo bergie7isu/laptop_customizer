@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import slugify from 'slugify';
+import Feature from '../Feature/Feature';
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -40,6 +41,21 @@ class Features extends Component {
                         </fieldset>
                     );
                 })}
+
+
+
+                {Object.keys(this.props.features).map((feature, idx) => 
+                    <Feature 
+                        feature={feature}
+                        idx={idx}
+                        features={this.props.features}
+                        selected={this.props.selected}
+                        updateFeature={this.props.updateFeature}
+                    />)
+                };
+
+                    
+
             </form>
         );
     };
