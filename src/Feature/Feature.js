@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import slugify from 'slugify';
+import FeatureOptions from '../FeatureOptions/FeatureOptions'
 
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -8,7 +9,7 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 
 class Feature extends Component {
     render() {
-        const {feature, idx} = this.props
+        const {feature, idx} = this.props;
         const featureHash = feature + '-' + idx;
         const options = this.props.features[feature].map(item => {
             const itemHash = slugify(JSON.stringify(item));
@@ -34,6 +35,17 @@ class Feature extends Component {
                     <h3>{feature}</h3>
                 </legend>
                 {options}
+
+                {this.props.features[feature].map(item =>
+                    <FeatureOptions 
+                        item={item}
+                        feature={this.props.feature}
+                        idx={this.props.idx}
+                        features={this.props.features}
+                        selected={this.props.selected}
+                        updateFeature={this.props.updateFeature}
+                    />)}
+
             </fieldset>
         );
     };
