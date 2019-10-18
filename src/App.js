@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import CustomizeYourLaptop from './CustomizeYourLaptop/CustomizeYourLaptop';
-import YourCart from './YourCart/YourCart';
+import Features from './Features/Features';
+import Cart from './Cart/Cart';
 
 class App extends Component {
   state = {
@@ -40,12 +40,12 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <CustomizeYourLaptop 
+          <Features 
             features={this.props.features}
             selected={this.state.selected}
             updateFeature={this.updateFeature}
           />
-          <YourCart
+          <Cart
             selected={this.state.selected}
           />
         </main>
