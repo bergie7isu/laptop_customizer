@@ -10,6 +10,8 @@ class Features extends Component {
                     <Feature 
                         feature={feature}
                         idx={idx}
+                        key={feature + '-' + idx}
+                        featureHash={feature + '-' + idx}
                         features={this.props.features}
                         selected={this.props.selected}
                         updateFeature={this.props.updateFeature}
